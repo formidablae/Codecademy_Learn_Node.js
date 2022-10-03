@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Rock-Paper-Scissors</title>
+</head>
+<style>
+  body {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+  }
+</style>
+<body>
+  <h1 id='title'>Welcome Stranger</h1>
+  <h2>Test your fate with a game of Rock-Paper-Scissors!</h2>
+  <div>
+    <button onclick='playGame("rock")'>Rock</button>
+    <button onclick='playGame("paper")'>Paper</button>
+    <button onclick='playGame("scissors")'>Scissors</button>
+  </div>
+
+  <p id='result' hidden></p>
+
+  <script>
+    const searchParams = new URLSearchParams(location.search);
+    const name = searchParams.get('name');
+
+    if (name) {
+      document.getElementById('title').innerText = `Welcome ${name}`
+    }
+
+    function playGame (option) {
+      fetch('/', { method: 'POST', body: option })
+        .then(response => response.text())
+        .then(text => {
+          const resultElement = document.getElementById('result')
+          resultElement.innerText = text
+          resultElement.hidden = false
+        })
+    }
+  </script>
+</body>
+</html>
