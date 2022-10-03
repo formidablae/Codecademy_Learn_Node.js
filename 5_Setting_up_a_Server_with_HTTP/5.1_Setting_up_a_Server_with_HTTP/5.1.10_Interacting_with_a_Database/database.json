@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Arnold",
+            "lastName": "Schwarzeneggar",
+            "created": "01-07-1985",
+            "updated": "05-07-2021"
+        },
+        {
+            "id": 2,
+            "firstName": "Jon",
+            "lastName": "Bonjovi",
+            "created": "03-01-1992",
+            "updated": "12-08-2007"
+        },
+        {
+            "id": 3,
+            "firstName": "Abraham",
+            "lastName": "Lincoln",
+            "created": "01-02-1839",
+            "updated": "15-04-1865"
+        }
+    ]
+}
